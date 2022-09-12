@@ -25,9 +25,16 @@ const buttons = document.querySelectorAll('button');
 
 buttons.forEach(btn => {
     btn.addEventListener('click', (e) => {
-        let btnId = e.target.getAttribute('id');
-        console.log(btnId);
-        return btnId;
+        if (e.target.getAttribute('class') != 'number') {
+            let btnId = e.target.getAttribute('id');
+            console.log(btnId);
+            return btnId; 
+        } 
+        else if (e.target.getAttribute('class') == 'number') {
+            let btnId = e.target.getAttribute('data-value');
+            console.log(btnId);
+            return btnId; 
+        }
     }) 
 })
 
