@@ -1,5 +1,5 @@
 
-// Calculator functions
+// Calculator sub-functions
 
 function addition (a, b) {
     return result = a + b;
@@ -17,7 +17,19 @@ function division (a, b) {
     return result = a / b;
 }
 
+//Button reference storage
+
 const output = document.querySelector('#result');
+
+const buttons = document.querySelectorAll('button');
+
+buttons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        let btnId = e.target.getAttribute('id');
+        console.log(btnId);
+        return btnId;
+    }) 
+})
 
 function calculate (a, b, operation) {
     if (operation === 'plus') {
@@ -42,6 +54,6 @@ function calculate (a, b, operation) {
     }
 }
 
-console.log(calculate(1, 4, 'plus'));
+calculate(1, 4, 'plus');
 
 
