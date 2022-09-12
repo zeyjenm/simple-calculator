@@ -31,6 +31,8 @@ buttons.forEach(btn => {
     }) 
 })
 
+//Calculate function
+
 function calculate (a, b, operation) {
     if (operation === 'plus') {
         let calculateResult = addition(a, b);
