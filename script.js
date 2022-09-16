@@ -84,6 +84,5 @@ function calculate (a, b, operation) {
 
 
 equals.addEventListener('click', (e) => {
-    console.log(calculate(numStorage.singleDigits[1], numStorage.singleDigits[0], operatorStorage.operator[0]));
+    console.log(calculate(parseInt(numStorage.singleDigits[1]), parseInt(numStorage.singleDigits[0]), operatorStorage.operator[0]));
 })
-
