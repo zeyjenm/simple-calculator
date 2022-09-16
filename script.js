@@ -34,23 +34,22 @@ console.log(operatorStorage);
 
 const equals = document.querySelector('#equals');
 const output = document.querySelector('#result');
-
+const calculations = document.querySelector('#temp');
 const buttons = document.querySelectorAll('button');
 
 buttons.forEach(btn => {
     btn.addEventListener('click', (e) => {
         if (e.target.getAttribute('class') == 'operator') {
             let btnId = e.target.getAttribute('id');
-            console.log(btnId);
             operatorStorage.operator.unshift(btnId);
+            calculations.textContent += btnId + ' ';
             return btnId; 
         } 
         else if (e.target.getAttribute('class') == 'number') {
             let btnId = e.target.getAttribute('data-value');
             parseInt(btnId);
-            console.log(btnId);
             numStorage.singleDigits.unshift(btnId);
-            console.log(numStorage);
+            calculations.textContent += btnId + ' ';
             return btnId; 
         }
     }) 
