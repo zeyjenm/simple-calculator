@@ -17,7 +17,17 @@ function division (a, b) {
     return result = a / b;
 }
 
+// Number storage
+
+let numStorage = {
+    firstNum: [null],
+};
+
+console.log(numStorage);
+
 //Button reference storage
+
+
 
 const output = document.querySelector('#result');
 
@@ -32,7 +42,10 @@ buttons.forEach(btn => {
         } 
         else if (e.target.getAttribute('class') == 'number') {
             let btnId = e.target.getAttribute('data-value');
+            parseInt(btnId);
             console.log(btnId);
+            numStorage.firstNum.unshift(btnId);
+            console.log(numStorage);
             return btnId; 
         }
     }) 
