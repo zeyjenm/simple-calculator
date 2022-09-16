@@ -42,7 +42,8 @@ buttons.forEach(btn => {
         if (e.target.getAttribute('class') == 'operator') {
             let btnId = e.target.getAttribute('id');
             operatorStorage.operator.unshift(btnId);
-            calculations.textContent += btnId + ' ';
+            let btnDisplay = e.target.getAttribute('data-value');
+            calculations.textContent += btnDisplay + ' ';
             return btnId; 
         } 
         else if (e.target.getAttribute('class') == 'number') {
