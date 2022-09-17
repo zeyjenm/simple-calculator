@@ -87,7 +87,16 @@ function getOperator (input) {
 }
 
 equals.addEventListener('click', (e) => {
+    // get index of operator
     let i = numStorage.digits.findIndex(getOperator);
- 
-    console.log(calculate(parseInt(numStorage.digits[1]), parseInt(numStorage.digits[0]), numStorage.digits[0]));
+
+    // get substring of first number
+    let firstSlice = numStorage.digits.slice(i + 1);
+    let first = firstSlice.reverse().join('');
+
+    // get substring of second number
+    let secondSlice = numStorage.digits.slice(0, i);
+    let second = secondSlice.reverse().join('');
+
+    console.log(calculate(parseInt(first), parseInt(second), numStorage.digits[i]));
 })
