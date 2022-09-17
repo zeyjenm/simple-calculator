@@ -31,6 +31,8 @@ const equals = document.querySelector('#equals');
 const output = document.querySelector('#result');
 const calculations = document.querySelector('#temp');
 const buttons = document.querySelectorAll('button');
+const clear = document.querySelector('#clear');
+const ac = document.querySelector('#ac');
 
 buttons.forEach(btn => {
     btn.addEventListener('click', (e) => {
@@ -100,4 +102,17 @@ equals.addEventListener('click', (e) => {
     console.log(first);
 
     console.log(calculate(parseFloat(first), parseFloat(second), numStorage.digits[i]));
+})
+
+//Clear functions
+
+clear.addEventListener('click', () => {
+    numStorage.digits = [];
+    output.textContent = numStorage.digits;
+})
+
+ac.addEventListener('click', () => {
+    numStorage.digits = [];
+    output.textContent = numStorage.digits;
+    calculations.textContent = [];
 })
