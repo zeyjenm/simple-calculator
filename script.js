@@ -24,7 +24,6 @@ let numStorage = {
 };
 
 console.log(numStorage);
-console.log(operatorStorage);
 
 //Button reference storage
 
@@ -37,7 +36,7 @@ buttons.forEach(btn => {
     btn.addEventListener('click', (e) => {
         if (e.target.getAttribute('class') == 'operator') {
             let btnId = e.target.getAttribute('id');
-            operatorStorage.operator.unshift(btnId);
+            numStorage.digits.unshift(btnId);
             let btnDisplay = e.target.getAttribute('data-value');
             calculations.textContent += btnDisplay + ' ';
             return btnId; 
@@ -78,8 +77,17 @@ function calculate (a, b, operation) {
     }
 }
 
-
+function getOperator (input) {
+    if (input == 'plus' || input == 'minus' || input == 'multiply' || input == 'divide') {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
 
 equals.addEventListener('click', (e) => {
+    let i = numStorage.digits.findIndex(getOperator);
+ 
     console.log(calculate(parseInt(numStorage.digits[1]), parseInt(numStorage.digits[0]), numStorage.digits[0]));
 })
