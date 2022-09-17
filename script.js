@@ -20,12 +20,8 @@ function division (a, b) {
 // Number storage
 
 let numStorage = {
-    singleDigits: [],
+    digits: [],
 };
-
-let operatorStorage = {
-    operator: [],
-}
 
 console.log(numStorage);
 console.log(operatorStorage);
@@ -49,7 +45,7 @@ buttons.forEach(btn => {
         else if (e.target.getAttribute('class') == 'number') {
             let btnId = e.target.getAttribute('data-value');
             parseInt(btnId);
-            numStorage.singleDigits.unshift(btnId);
+            numStorage.digits.unshift(btnId);
             calculations.textContent += btnId + ' ';
             return btnId; 
         }
@@ -83,6 +79,7 @@ function calculate (a, b, operation) {
 }
 
 
+
 equals.addEventListener('click', (e) => {
-    console.log(calculate(parseInt(numStorage.singleDigits[1]), parseInt(numStorage.singleDigits[0]), operatorStorage.operator[0]));
+    console.log(calculate(parseInt(numStorage.digits[1]), parseInt(numStorage.digits[0]), numStorage.digits[0]));
 })
