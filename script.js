@@ -97,6 +97,7 @@ equals.addEventListener('click', (e) => {
     // get substring of second number
     let secondSlice = numStorage.digits.slice(0, i);
     let second = secondSlice.reverse().join('');
+    console.log(first);
 
-    console.log(calculate(parseInt(first), parseInt(second), numStorage.digits[i]));
+    console.log(calculate(parseFloat(first), parseFloat(second), numStorage.digits[i]));
 })
